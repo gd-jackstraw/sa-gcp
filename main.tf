@@ -1,4 +1,5 @@
 resource "google_service_account" "ci_role" {
+  project = var.project_id
   account_id   = "ci-role"
   display_name = "Compute Instance user"
 }
