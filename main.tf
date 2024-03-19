@@ -12,7 +12,7 @@ resource "google_project_iam_binding" "ci_role" {
   ]
 }
 
-resource "google_project_services" "project" {
+resource "google_project_service" "project" {
   project = var.project_id
   services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com"]
 }
