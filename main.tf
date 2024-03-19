@@ -11,3 +11,8 @@ resource "google_project_iam_binding" "ci_role" {
     "serviceAccount:${google_service_account.ci_role.email}"
   ]
 }
+
+resource "google_project_services" "project" {
+  project = var.project_id
+  services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com"]
+}
