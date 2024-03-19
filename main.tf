@@ -21,7 +21,7 @@ resource "google_project_service" "iam-api" {
 
 resource "google_project_service" "cloudrm-api" {
   project = var.project_id
-  service = ""cloudresourcemanager.googleapis.com""
+  service = "cloudresourcemanager.googleapis.com""
 
   disable_dependent_services = true
 }
