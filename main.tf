@@ -12,7 +12,16 @@ resource "google_project_iam_binding" "ci_role" {
   ]
 }
 
-resource "google_project_services" "project" {
+resource "google_project_service" "iam-api" {
   project = var.project_id
-  services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com"]
+  service = "iam.googleapis.com"
+
+  disable_dependent_services = true
+}
+
+resource "google_project_service" "cloudrm-api" {
+  project = var.project_id
+  service = ""cloudresourcemanager.googleapis.com""
+
+  disable_dependent_services = true
 }
